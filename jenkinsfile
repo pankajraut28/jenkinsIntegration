@@ -1,6 +1,12 @@
 node {
-    stage('Checkout') {
+    stage('Git integreation') {
         // Clone the source code from Git
+sh 'Cloning branch'
+                        git credentialsUser: 'pankajr28',
+                        git Password:'Pankaj@123'
+                        url: "https://github.com/Siddhatech/siddhatech_wdio_android.git", 
+                        choice: "main",
+                                "feature/pankaj"
     }
 
     stage('Build') {
