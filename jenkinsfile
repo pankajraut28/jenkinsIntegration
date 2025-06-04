@@ -7,6 +7,21 @@ sh 'Cloning branch'
                         //url: "https://github.com/Siddhatech/siddhatech_wdio_android.git", 
                         //choice: "main",
                                 //"feature/pankaj"
+
+                             environment {
+        GIT_USER = credentials('pankajr@siddhatech.com')
+        GIT_PASSWORD = credentials('Pankajraut@123')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/Siddhatech/siddhatech_wdio_android.git',
+                    credentialsId: "${GIT_USER}"
+                    credentialsPass:"${GIT_PASSWORD}"
+            }
+        }
+    }
     }
 
     stage('Build') {
