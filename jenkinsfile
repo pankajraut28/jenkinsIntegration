@@ -1,0 +1,21 @@
+node {
+    stage('Checkout') {
+        // Clone the source code from Git
+      //  git url: 'https://github.com/your-org/your-repo.git'
+    }
+
+    stage('Build') {
+        // Run a shell command to build
+        sh 'make build'
+    }
+
+    stage('Test') {
+        // Run tests
+        sh 'make test'
+    }
+
+    stage('Deploy') {
+        // Deploy the application
+        sh 'make deploy'
+    }
+}
